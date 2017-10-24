@@ -19,6 +19,8 @@ $(document).ready(function() {
     }
     $(".hide").show();
     $(".primeLessThan").text(userNumber);
-    $("#show").text(numbers);
+    for (index = 1; index < numbers.length; index ++) {
+      $("#show").append("<li>" + numbers[index] + "</li>");
+    }
   })
 })
