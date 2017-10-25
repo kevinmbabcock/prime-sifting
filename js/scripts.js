@@ -4,16 +4,14 @@ $(document).ready(function() {
 
     var userNumber = parseInt($("#userNumber").val());
     var numbers = [];
-    for (var index = userNumber; index >= 2; index --) {
+    for (var index = 2; index <= userNumber; index ++) {
       numbers.push(index);
     }
 
     for (var prime = 2; prime < userNumber; prime ++) {
       numbers.forEach(function(number) {
-        if (number !== prime) {
-          if (number % prime === 0) {
-            numbers.splice(numbers.indexOf(number), 1);
-          }
+        if ((number !== prime) && (number % prime === 0)) {
+          numbers.splice(numbers.indexOf(number), 1);
         }
       })
     }
